@@ -1,0 +1,15 @@
+<div>  
+      <h1> {{ customer.name }} Order HTML</h1>
+      
+      <table border="1">
+          <tr>
+            <th> Product </th>
+            <th> Total </th>
+          </tr>
+          <tr ng-repeat="order in customer.orders">
+            <td> {{order.product | uppercase }} </td>
+            <td> {{order.total | lowercase }} </td>
+          </tr>
+      </table>
+  
+    </div> 

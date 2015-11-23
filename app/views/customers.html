@@ -1,0 +1,26 @@
+<div>   
+  {{ appsettings.name }} <br />
+  
+      FilterBy Customer Name : <input type="text" ng-model="customerFilter.name"><br/>
+      <table border="1">
+          <tr>
+            <th> Name </th>
+            <th> City </th>
+            <th> Date Joined </th>
+            <th> Salary </th>
+            <th> Order Link </th>
+          </tr>
+          <tr ng-repeat="cust in customer |filter:customerFilter">
+            <td> {{cust.name | uppercase }} </td>
+            <td> {{cust.city | lowercase }} </td>
+            <td> {{cust.datejoined | date:'dd/MM/yy' }} </td>
+            <td> {{cust.ordertotal | currency }} </td>
+            <td> <a href='#/order/{{cust.id}}'> View Order </a> </td>
+          </tr>
+      </table>
+
+<span> Total customers: {{customer.length}}</span>
+  
+    </div> 
+
+<footer> Version: {{ appsettings.version }}</footer>
